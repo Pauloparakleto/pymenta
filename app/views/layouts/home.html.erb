@@ -48,50 +48,23 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-	        <div class="nav-collapse">
-		      <ul class="nav pull-left">
-                <a class="brand" href="#page-top">PYMENTA</a>
-	          </ul>
-	        </div>	
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">          
-                        <a href="#about"><%=t '.ourproduct' %></a>
-                    </li>
-                   <li class="page-scroll">          
-                        <a href="#tour"><%=t '.tour' %></a>
-                    </li>
-                   <li class="page-scroll">          
-                        <a href="#pricing"><%=t '.prices' %></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact"><%=t '.contact' %></a>
-                    </li>
-                    <li class="page-scroll">
-                        <li><%= link_to t("helpers.links.sign_in"), new_user_session_path %></li>
-                    </li>
-                    <li class="page-scroll">
-	                   <%= link_to t("helpers.links.sign_up"), new_user_registration_path , :class=>"btn btn-default" %>
-                    </li>
-                </ul>
+    <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+        </nav>
     <section class="intro">
         <div class="intro-body">
             <div class="container">
