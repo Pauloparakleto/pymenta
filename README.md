@@ -6,6 +6,8 @@ You can manage warehouses, providers, clients, products, stock and print statist
 
 This application is released as an open source project for educational purposes. Uses Rails 5, React, Boostrap, Device, Simple_Form, Prawn, PaperClip and ActiveAdmin.
 
+The forked repository is on [heroku]( https://git.heroku.com/damp-meadow-76948.git)
+
 Demo Application
 ----------------
 
