@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Pymenta" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Pymenta" %>">
+	<!-- Core theme CSS (includes Bootstrap)-->
+    <link href="https://startbootstrap.github.io/startbootstrap-grayscale/css/styles.css" rel="stylesheet" />
+    
     <%= stylesheet_link_tag "bootstrap3", :media => "all" %>
     <%= stylesheet_link_tag "home", :media => "all" %>
     <%= javascript_include_tag 'jquery.easing.min' %>
