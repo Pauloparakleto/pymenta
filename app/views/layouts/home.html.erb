@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title><%= content_for?(:title) ? yield(:title) : "Pymenta" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Pymenta" %>">
 
@@ -51,40 +51,40 @@
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" role="navigation">
         <div class="container">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                <i class="fas fa-bars"></i>
+                </button>
 	        <div class="nav-collapse">
 		      <ul class="nav pull-left">
-                <a class="brand" href="#page-top">PYMENTA</a>
+                <a class="brand js-scroll-trigger" href="#page-top">PYMENTA</a>
 	          </ul>
 	        </div>	
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
+			
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
+                    <li class="nav-item hidden">
+                        <a class="nav-link js-scroll-trigger" href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">          
-                        <a href="#about"><%=t '.ourproduct' %></a>
+                    <li class="page-scroll nav-item">          
+                        <a class="nav-link js-scroll-trigger" href="#about"><%=t '.ourproduct' %></a>
                     </li>
-                   <li class="page-scroll">          
-                        <a href="#tour"><%=t '.tour' %></a>
+                   <li class="nav-item">          
+                        <a class="nav-link js-scroll-trigger" href="#tour"><%=t '.tour' %></a>
                     </li>
-                   <li class="page-scroll">          
-                        <a href="#pricing"><%=t '.prices' %></a>
+                   <li class="nav-item">          
+                        <a class="nav-link js-scroll-trigger" href="#pricing"><%=t '.prices' %></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#contact"><%=t '.contact' %></a>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact"><%=t '.contact' %></a>
                     </li>
-                    <li class="page-scroll">
-                        <li><%= link_to t("helpers.links.sign_in"), new_user_session_path %></li>
+                    <li class="nav-item">
+                        <%= link_to t("helpers.links.sign_in"), new_user_session_path, :class=>"nav-link js-scroll-trigger" %>
                     </li>
-                    <li class="page-scroll">
-	                   <%= link_to t("helpers.links.sign_up"), new_user_registration_path , :class=>"btn btn-default" %>
+                    <li class="nav-item">
+	                   <%= link_to t("helpers.links.sign_up"), new_user_registration_path , :class=>"nav-link js-scroll-trigger" %>
                     </li>
                 </ul>
             </div>
