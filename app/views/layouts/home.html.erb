@@ -124,10 +124,10 @@
 
 This application is released as an open source project for educational purposes. Uses Rails 5, React, Boostrap, Device, Simple_Form, Prawn, PaperClip and ActiveAdmin.' %></p>
                   <%= link_to t("helpers.links.sign_up"), new_user_registration_path , :class=>"btn btn-danger btn-lg" %>
-			  </br>
-			  </br>
-			  </br>			  			  
-				  <%= link_to image_tag("github.png"), "https://github.com/papayalabs/pymenta" %>
+				  <div>
+				  	<%= link_to image_tag("github.png"), "https://github.com/papayalabs/pymenta" %>
+				  </div>
+			  	  
             </div>
         </div>
     </section>
@@ -141,10 +141,6 @@ This application is released as an open source project for educational purposes.
 					<div class="col-lg-6 col-lg-offset-3">
 	                    <h1><%= t('.tour', :default => t("layouts.home.tour")) %></h1>
 					</div>
-					</br>
-					</br>
-				    </br>
-				    </br>
 				    <%= video_tag "Tour.mp4", :class => "video-js vjs-default-skin",:size => "1164x628", :controls => true, :autobuffer => true %>
 				</div>
 	        </div>
@@ -157,9 +153,7 @@ This application is released as an open source project for educational purposes.
 			<div class="row">
 				<div class="col-lg-10 col-lg-offset-1">
 					<h1><%= t('.prices', :default => t("layouts.home.prices")) %></h1>
-					</br>
-					</br>
-	                <div id="pricing-table" class="row">
+					<div id="pricing-table" class="row">
 	                    <div class="col-sm-12">
 	                        <ul class="plan">
 	                            <li class="plan-name"><%= t('.free', :default => t("layouts.home.free")) %></li>
