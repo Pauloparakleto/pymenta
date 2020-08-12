@@ -505,3 +505,14 @@ body {
   border-bottom-color: #52b6ec;
   margin: 0;
 }
+
+@media(max-width: 400px){
+    section{
+        width: 360px;
+    }
+    .video{
+        width: 350px;
+        text-align: center;
+    }
+
+}
