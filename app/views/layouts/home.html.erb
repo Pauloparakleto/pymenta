@@ -118,11 +118,11 @@ This application is released as an open source project for educational purposes.
         </div>
     </section>
 
-	<section class="conteiner">
+	<section class="conteiner text-center">
 		<div class="col-lg-6 col-lg-offset-3">
 			<h1><%= t('.tour', :default => t("layouts.home.tour")) %></h1>
 		</div>
-		<%= video_tag "Tour.mp4", :controls => true, :autobuffer => true, class: "video" %>
+		<%= video_tag "Tour.mp4", :controls => true, :autobuffer => true, class: "video video-js vjs-default-skin" %>
 	</section>
 
 <!--
