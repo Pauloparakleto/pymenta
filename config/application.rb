@@ -14,7 +14,7 @@ module Pymenta
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
     end
-    config.i18n.available_locales = [:es, :en]
+    config.i18n.available_locales = [:es, :en, :pt]
     config.react.addons = true
     config.limit = 15
   end
