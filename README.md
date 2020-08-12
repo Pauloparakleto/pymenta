@@ -6,7 +6,13 @@ You can manage warehouses, providers, clients, products, stock and print statist
 
 This application is released as an open source project for educational purposes. Uses Rails 5, React, Boostrap, Device, Simple_Form, Prawn, PaperClip and ActiveAdmin.
 
-The forked repository is on [heroku]( https://git.heroku.com/damp-meadow-76948.git).
+The forked repository is on [heroku](https://damp-meadow-76948.herokuapp.com/).
+
+Mobile first layouts:
+
+![Mobile view closed menu button](https://res.cloudinary.com/dilwtauny/image/upload/c_scale,w_221/v1597196030/pymentaopensource/pymentaclosedmenu_znlsew.png)
+
+![Mobile view opened menu button](https://res.cloudinary.com/dilwtauny/image/upload/c_scale,w_221/v1597196029/pymentaopensource/pymentaopenmenu_yofy0s.png)
 
 Demo Application
 ----------------
