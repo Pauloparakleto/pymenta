@@ -507,6 +507,9 @@ body {
 }
 
 @media screen and (max-width: 420px){
+    #contact{
+        padding-top: 0;
+    }
     section{
         max-width: 100%;
     }
