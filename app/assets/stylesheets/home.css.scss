@@ -506,7 +506,10 @@ body {
   margin: 0;
 }
 
-@media screen and (max-width: 420px){
+@media screen and (max-width: 640px){
+    #menu-button{
+        width: 40%;
+    }
     #contact{
         padding-top: 0;
     }
