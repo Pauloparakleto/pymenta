@@ -49,25 +49,25 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="nav-item hidden">
+                    <li class="nav-item page-scroll">
                         <a class="nav-link js-scroll-trigger" href="#page-top"></a>
                     </li>
-                    <li class="page-scroll nav-item">          
+                    <li class="nav-item page-scroll">          
                         <a class="nav-link js-scroll-trigger" href="#about"><%=t '.ourproduct' %></a>
                     </li>
-                   <li class="page-scroll nav-item">          
+                   <li class="nav-item page-scroll">          
                         <a class="nav-link js-scroll-trigger" href="#tour"><%=t '.tour' %></a>
                     </li>
-                   <li class="page-scroll nav-item">          
+                   <li class="nav-item page-scroll">          
                         <a class="nav-link js-scroll-trigger" href="#pricing"><%=t '.prices' %></a>
                     </li>
-                    <li class="page-scroll nav-item">
+                    <li class="nav-item page-scroll">
                         <a class="nav-link js-scroll-trigger" href="#contact"><%=t '.contact' %></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item page-scroll">
                         <%= link_to t("helpers.links.sign_in"), new_user_session_path, :class=>"nav-link js-scroll-trigger" %>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item page-scroll">
 	                   <%= link_to t("helpers.links.sign_up"), new_user_registration_path , :class=>"nav-link js-scroll-trigger" %>
                     </li>
                 </ul>
@@ -79,7 +79,7 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<body id="page-top">
 
     
     <section class="intro">
