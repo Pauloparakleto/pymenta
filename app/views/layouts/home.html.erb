@@ -83,14 +83,14 @@
 
     
     <header class="masthead">
-        <div class="intro-body">
-            <div class="container">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
 	                    <% if flash[:notice] %>
                           <h1><%= flash[:notice] %></h1>
                         <% end %>
-                        <h1><%=t '.title' %></h1>
+                        <h1 class="text-white-50 mx-auto mt-2 mb-5"><%=t '.title' %></h1>
                         <p class="intro-text"><%=t '.title2' %></p>
                         <div class="page-scroll">
                             <a href="#about" class="btn btn-circle">
