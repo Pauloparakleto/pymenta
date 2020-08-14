@@ -201,16 +201,26 @@ This application is released as an open source project for educational purposes.
     </section>
 
     <!-- div id="map"></div -->
-	    <div class="wet-asphalt">
-	        <div class="container">
+	<footer class="footer bg-black small text-center text-white-50">
+		<div class="container wet-asphalt col-sm-6">
+			<%= t('.copyright', :default => t("layouts.home.copyright")) %><a target="_blank" href="http://papayalabs.github.io" title="Lapapaya"><%= t('.companyname', :default => t("layouts.home.companyname")) %>
+			<a target="_blank" href="http://papayalabs.github.io" title="Lapapaya"><%= t('.companyname', :default => t("layouts.home.companyname")) %>
+	</a>. <%= t('.allrightreserved', :default => t("layouts.home.allrightreserved")) %>
+	<div><%= link_to t('.termsofservice', :default => t("helpers.home.termsofservice")), terms_path %></div>
+	<div><%= link_to t('.privacypolicy', :default => t("helpers.home.privacypolicy")), privacy_path  %></div>
+		</div>
+	</footer>
+	    
 <!--
+	<div class="wet-asphalt">
+	        <div class="container">
 	            <div class="row">
 	                <div class="col-sm-12">
 	                    <b><%= t('.madewith', :default => t("layouts.home.madewith")) %></b> <%= image_tag("heart-icon.png", width: "24", alt: "") %> <b><%= t('.invenezuela', :default => t("layouts.home.invenezuela")) %></b>
 	                </div>
 	            </div>
 -->
-	            <div class="row">
+	            <!--<div class="row">
 	                <div class="col-sm-6">
 	                    <%= t('.copyright', :default => t("layouts.home.copyright")) %><a target="_blank" href="http://papayalabs.github.io" title="Lapapaya"><%= t('.companyname', :default => t("layouts.home.companyname")) %>
 	</a>. <%= t('.allrightreserved', :default => t("layouts.home.allrightreserved")) %>
@@ -223,7 +233,7 @@ This application is released as an open source project for educational purposes.
 	                </div>
 	            </div>
 	        </div>
-	    </div><!--/#footer-->
+	    </div> --> <!--/#footer-->
 
 		<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
