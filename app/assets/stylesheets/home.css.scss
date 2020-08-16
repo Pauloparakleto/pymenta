@@ -369,8 +369,8 @@ body {
 
 .wet-asphalt {
   background-color: #000000;
-  height: 150px;
-  padding: 100px 20px;
+  height: 0px;
+  padding: 0px 0px;
 }
 .wet-asphalt a:not(.btn) {
   color: #bdc3c7;
@@ -517,6 +517,11 @@ body {
     #contact{
         margin-top: 150px;
         padding-top: 0;
+    }
+    footer, .footer{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-top: 0
     }
     section{
         max-width: 100%;
