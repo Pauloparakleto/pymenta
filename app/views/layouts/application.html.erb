@@ -1,72 +1,311 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title><%= content_for?(:title) ? yield(:title) : "Pymenta" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Pymenta" %>">
-    <%= stylesheet_link_tag "devise", :media => "all" %>
-    <%= javascript_include_tag 'application' %>
+
+	<!-- Core theme CSS (includes Bootstrap)-->
+    <link href="https://startbootstrap.github.io/startbootstrap-grayscale/css/styles.css" rel="stylesheet" />
+	<!-- Font Awesome icons (free version)-->
+    
+	<!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+-->
+    <%= stylesheet_link_tag "bootstrap3", :media => "all" %>
+    <%= stylesheet_link_tag "home", :media => "all" %>
+    <%= javascript_include_tag 'jquery.easing.min' %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>   
 	<script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-transition.js"></script>
 	<script type="text/javascript" src="http://twitter.github.io/bootstrap/assets/js/bootstrap-collapse.js"></script>
-	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>  
-  </head>
-  <body class="<%= controller_name %> <%= action_name %>">
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <div class="nav-collapse">
-	      <ul class="nav pull-left">
-		    <% if user_signed_in? %>
-			  <%= link_to "PYMENTA", root_path, :class => 'brand' %>
-		    <% else %>
-			  <%= link_to "PYMENTA", root_path, :class => 'brand' %>
-		    <% end %>
-          </ul>
-          <ul class="nav pull-right">
-            <%= render 'layouts/navigation' %>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+	<script src="http://vjs.zencdn.net/4.12/video.js"></script>
 
-    <div id="main" role="main">
-      <div class="container">
-        <div id="company-logo">
-          <%= render 'companies/logo' %>
-        </div>
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-				<div class="navbar">
-			    	<div class="navbar-inner">
-			    		<ul class="nav">
-	                      <li><%= link_to t('.documents', :default => t("helpers.labels.documents")), documents_path %></li>
-						  <li><%= link_to t('.clients', :default => t("helpers.labels.clients")), clients_path %></li>														
-		    			  <li><%= link_to t('.providers', :default => t("helpers.labels.providers")), providers_path %></li>
-	                      <li><%= link_to t('.products', :default => t("helpers.labels.products")), products_path %></li>
-						  <li><%= link_to t('.stocks', :default => t("helpers.labels.stocks")), stocks_path %></li>
-						  <li><%= link_to t('.payments_documents', :default => t("helpers.labels.payments_documents")), payments_documents_path %></li>
+    <!-- Core JavaScript Files -->
 
-					</ul>
-			    	</div>
-			    </div>
-              <%= render 'layouts/messages' %>
-              <%= yield %>
+    <!-- Fonts -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>		
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" id="mainNav" role="navigation">
+        <div class="container">
+            <div class="nav-collapse">
+		      <ul class="nav pull-left">
+                <a class="brand js-scroll-trigger" href="#page-top">PYMENTA</a>
+	          </ul>
+			  
+	        </div>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    
+                <i class="fa fa-bars"></i>
+                </button>
+	        	
+            <!-- Collect the nav links, forms, and other content for toggling -->
+			
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="nav-item page-scroll">
+                        <a class="nav-link js-scroll-trigger" href="#page-top"></a>
+                    </li>
+                    <li class="nav-item page-scroll">          
+                        <a class="nav-link js-scroll-trigger" href="#about"><%=t '.ourproduct' %></a>
+                    </li>
+                   <li class="nav-item page-scroll">          
+                        <a class="nav-link js-scroll-trigger" href="#tour"><%=t '.tour' %></a>
+                    </li>
+                   <li class="nav-item page-scroll">          
+                        <a class="nav-link js-scroll-trigger" href="#pricing"><%=t '.prices' %></a>
+                    </li>
+                    <li class="nav-item page-scroll">
+                        <a class="nav-link js-scroll-trigger" href="#contact"><%=t '.contact' %></a>
+                    </li>
+                    <li class="nav-item page-scroll">
+                        <%= link_to t("helpers.links.sign_in"), new_user_session_path, :class=>"nav-link js-scroll-trigger" %>
+                    </li>
+                    <li class="nav-item page-scroll">
+	                   <%= link_to t("helpers.links.sign_up"), new_user_registration_path , :class=>"nav-link js-scroll-trigger" %>
+                    </li>
+                </ul>
             </div>
-          </div>
-          <footer>
-          </footer>
+            <!-- /.navbar-collapse -->
         </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
-  </body>
+        <!-- /.container -->
+    </nav>
+
+</head>
+
+<body id="page-top">
+
+    
+    <header class="masthead intro">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+	                    <% if flash[:notice] %>
+                          <h1><%= flash[:notice] %></h1>
+                        <% end %>
+                        <h1 class="text-white-50 mx-auto mt-2 mb-5"><%=t '.title' %></h1>
+                        <p class="intro-text"><%=t '.title2' %></p>
+                        <div class="page-scroll">
+                            <a href="#about" class="btn btn-circle">
+                                <%= image_tag("arrow.png", class: "img-responsive") %>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="about-section text-center">
+        <div class="container">
+            <div class="col-lg-8 mx-auto">
+				  <h2 class="text-white mb-4"><%=t '.ourproduct' %></h2>      
+                  <p class="text-white-50"><%=t '.description', :default => 'Pymenta is a very simple Rails Cloud ERP System created for small companies to create, manage and print documents ( invoices, notes, quotations, credits, etc). You can manage warehouses, providers and clients. Also products and stock. Print Statistic Reports.
+
+This application is released as an open source project for educational purposes. Uses Rails 5, React, Boostrap, Device, Simple_Form, Prawn, PaperClip and ActiveAdmin.' %></p>
+                  <%= link_to t("helpers.links.sign_up"), new_user_registration_path , :class=>"btn-ui-ux btn btn-danger btn-lg" %>
+				  <div id="github-img-div">
+				  	<%= link_to image_tag("github.png"), "https://github.com/papayalabs/pymenta", :class=>"btn-ui-ux" %>
+				  </div>
+			  	  
+            </div>
+        </div>
+    </section>
+
+<!--Projects-->
+	<section id="tour" class="projects-section bg-light tour-section text-center">
+		<div class="container col-lg-8 mx-auto">
+			<h1><%= t('.tour', :default => t("layouts.home.tour")) %></h1>
+		</div>
+		<%= video_tag "Tour.mp4", :controls => true, :autobuffer => true, class: "video video-js vjs-default-skin" %>
+	</section>
+
+<!--
+		<section id="tour" class="container text-center">	
+		  <div>	
+		  <div>
+	        <div>
+				<div class="row mt centered">
+					<div class="col-lg-6 col-lg-offset-3">
+	                    <h1><%= t('.tour', :default => t("layouts.home.tour")) %></h1>
+					</div>
+					<div>
+				    <%= video_tag "Tour.mp4", :class => "video-js vjs-default-skin",:size => "1164x628", :controls => true, :autobuffer => true %>
+					</div>
+				</div>
+	        </div>
+	      </div>
+	      </div>	
+		</section>
+		-->
+		
+		<section id="pricing" class="content-section text-center">
+		  <div class="container">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1">
+					<h1><%= t('.prices', :default => t("layouts.home.prices")) %></h1>
+					<div id="pricing-table" class="row">
+	                    <div class="col-sm-12">
+	                        <ul class="plan">
+	                            <li class="plan-name"><%= t('.free', :default => t("layouts.home.free")) %></li>
+	                            <li class="plan-price"><%= t('.free', :default => t("layouts.home.free")) %></li>
+	                            <li><%= t('.unlimited-invoices', :default => t("layouts.home.unlimited-invoices")) %></li>
+	                            <li><%= t('.unlimited-providers', :default => t("layouts.home.unlimited-providers")) %></li>
+	                            <li><%= t('.free-retentions', :default => t("layouts.home.free-retentions")) %></li>
+	                            <li class="plan-action"><%= link_to t("helpers.links.sign_up"), new_user_registration_path , :class=>"btn-ui-ux btn btn-primary btn-lg" %></li>
+	                        </ul>
+	                    </div>
+<!--						
+	                    <div class="col-sm-6">
+	                        <ul class="plan">
+	                            <li class="plan-name"><%= t('.paid', :default => t("layouts.home.paid")) %></li>
+	                            <li class="plan-price"><%= t('.month-price', :default => t("layouts.home.month-price")) %></li>
+	                            <li class="plan-price-year"><%= t('.year-price', :default => t("layouts.home.year-price")) %></li>
+	                            <li><%= t('.unlimited-invoices', :default => t("layouts.home.unlimited-invoices")) %></li>
+	                            <li><%= t('.unlimited-providers', :default => t("layouts.home.unlimited-providers")) %></li>
+	                            <li><%= t('.unlimited-retentions', :default => t("layouts.home.unlimited-retentions")) %></li>
+	                            <li class="plan-action"><%= link_to t("helpers.links.sign_up"), new_user_registration_path , :class=>"btn btn-primary btn-lg" %></li>
+	                        </ul>
+	                    </div>
+	                </div> 
+-->						
+	            </div>
+			</div>
+		  </div>
+		</section><!--/#pricing-->
+		
+    <section id="contact" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+	                <h2><%=t '.contact' %></h2>
+	                <p><%=t '.contact_description' %></p>
+	                <p><%=t '.email' %></p>
+	                <ul class="list-inline banner-social-buttons">
+	                    <li><a href="https://twitter.com/papayalabs" class="btn-ui-ux btn btn-danger"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+	                    </li>
+	                    <li><a href="https://github.com/papayalabs" class="btn-ui-ux btn btn-info"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+	                    </li>
+	                    <li><a href="https://facebook.com" class="btn-ui-ux btn btn-primary"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+	                    </li>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- div id="map"></div -->
+	<footer class="footer bg-black small text-center text-white-50">
+		<div class="container wet-asphalt col-sm-6">
+			<%= t('.copyright', :default => t("layouts.home.copyright")) %>
+			<a target="_blank" href="http://papayalabs.github.io" title="Lapapaya"><%= t('.companyname', :default => t("layouts.home.companyname")) %>
+			</a>. <%= t('.allrightreserved', :default => t("layouts.home.allrightreserved")) %>
+	<div><%= link_to t('.termsofservice', :default => t("helpers.home.termsofservice")), terms_path %></div>
+	<div><%= link_to t('.privacypolicy', :default => t("helpers.home.privacypolicy")), privacy_path  %></div>
+		</div>
+	</footer>
+	    
+<!--
+	<div class="wet-asphalt">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12">
+	                    <b><%= t('.madewith', :default => t("layouts.home.madewith")) %></b> <%= image_tag("heart-icon.png", width: "24", alt: "") %> <b><%= t('.invenezuela', :default => t("layouts.home.invenezuela")) %></b>
+	                </div>
+	            </div>
+-->
+	            <!--<div class="row">
+	                <div class="col-sm-6">
+	                    <%= t('.copyright', :default => t("layouts.home.copyright")) %><a target="_blank" href="http://papayalabs.github.io" title="Lapapaya"><%= t('.companyname', :default => t("layouts.home.companyname")) %>
+	</a>. <%= t('.allrightreserved', :default => t("layouts.home.allrightreserved")) %>
+	                </div>
+	                <div class="col-sm-6">
+	                  <ul class="nav navbar-nav navbar-right">
+	                    <li><%= link_to t('.termsofservice', :default => t("helpers.home.termsofservice")), terms_path, :class => 'decorated_link'  %></li>
+	                    <li><%= link_to t('.privacypolicy', :default => t("helpers.home.privacypolicy")), privacy_path, :class => 'decorated_link'  %></li>
+	                  </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div> --> <!--/#footer-->
+
+		<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script>
+		(function(vjs) {
+		  var
+		    /**
+		     * Copies properties from one or more objects onto an original.
+		     */
+		    extend = function(obj /*, arg1, arg2, ... */) {
+		      var arg, i, k;
+		      for (i = 1; i < arguments.length; i++) {
+		        arg = arguments[i];
+		        for (k in arg) {
+		          if (arg.hasOwnProperty(k)) {
+		            obj[k] = arg[k];
+		          }
+		        }
+		      }
+		      return obj;
+		    },
+		    // define some reasonable defaults for this sweet plugin
+		    defaults = {
+		      autoDisable: false
+		    },
+		    // plugin initializer
+		    disableProgress = function(options) {
+		      var
+		        // save a reference to the player instance
+		        player = this,
+		        state = false,
+		        // merge options and defaults
+		        settings = extend({}, defaults, options || {});
+		      // disable / enable methods
+		      player.disableProgress = {
+		        disable: function() {
+		            state = true;
+		            player.controlBar.progressControl.seekBar.hide();
+		        },
+		        enable: function() {
+		            state = false;
+		        },
+		        getState: function(){
+		          return state;
+		        }
+		      };
+		      if(settings.autoDisable)
+		      {
+		        player.disableProgress.disable();
+		      }
+		    };
+		  // register the plugin with video.js
+		  vjs.plugin('disableProgress', disableProgress);
+		}(window.videojs));
+		var
+		  // save a reference to the video element
+		  video = document.querySelector('video'),
+		  // save a reference to the video.js player for that element
+		  player = videojs(video);
+		  // Here is where you initialize the plugin, passing in autoDisable
+		  // autoDisable: true ==> The ProgressBar is hide
+		  // autoDisable: false ==> The ProgressBar work normally
+		  player.disableProgress({
+		    autoDisable: true
+		  });
+	</script>-->
+    <!-- Google Maps API Key - You will need to use your own API key to use the map feature -->
+    
+     <%= javascript_include_tag 'application' %>
+</body>
+
 </html>
