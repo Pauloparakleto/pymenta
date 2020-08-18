@@ -4,7 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Pymenta" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Pymenta" %>">
+
+	<!-- Core theme CSS (includes Bootstrap)-->
+    <link href="https://startbootstrap.github.io/startbootstrap-grayscale/css/styles.css" rel="stylesheet" />
+
     <!--<%= stylesheet_link_tag "devise", :media => "all" %>-->
+	<%= stylesheet_link_tag "bootstrap3", :media => "all" %>
+    <%= stylesheet_link_tag "home", :media => "all" %>
+    <%= javascript_include_tag 'jquery.easing.min' %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>   
@@ -13,14 +20,17 @@
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-			<%= link_to "PYMENTA", root_path, :class => 'navbar-brand' %>
+  <header class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+	<div class="nav-collapse">
+		<ul class="nav pull-left">
+			<%= link_to "PYMENTA", root_path, :class => 'brand' %>
+		</ul>
+	</div>
 			<p class="text-info">beta</p>
-      </div>
+
     </div>
-  </div>
+  </header>
 	<div id="wrap">
     <div id="main" role="main">
       <div class="jumbotron vertical-center"> 
