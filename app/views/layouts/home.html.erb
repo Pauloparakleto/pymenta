@@ -144,13 +144,13 @@ This application is released as an open source project for educational purposes.
 		</section>
 		-->
 		
-		<section id="pricing" class="content-section text-center">
-		  <div class="container">
+		<section id="pricing" class="content-section text-center mx-auto">
+		  
 			
 				
 					<h1><%= t('.prices', :default => t("layouts.home.prices")) %></h1>
-					<div id="pricing-table" class="row">
-	                    <div class="col-sm-12">
+					<div id="pricing-table">
+	                   
 	                        <ul class="plan">
 	                            <li class="plan-name"><%= t('.free', :default => t("layouts.home.free")) %></li>
 	                            <li class="plan-price"><%= t('.free', :default => t("layouts.home.free")) %></li>
@@ -159,7 +159,7 @@ This application is released as an open source project for educational purposes.
 	                            <li><%= t('.free-retentions', :default => t("layouts.home.free-retentions")) %></li>
 	                            <li class="plan-action"><%= link_to t("helpers.links.sign_up"), new_user_registration_path , :class=>"btn-ui-ux btn btn-primary btn-lg" %></li>
 	                        </ul>
-	                    </div>
+					</div>
 <!--						
 	                    <div class="col-sm-6">
 	                        <ul class="plan">
@@ -176,7 +176,7 @@ This application is released as an open source project for educational purposes.
 -->						
 	            
 			
-		  </div>
+		  
 		</section><!--/#pricing-->
 		
     <section id="contact" class="content-section text-center">
