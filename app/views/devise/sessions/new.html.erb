@@ -1,7 +1,7 @@
 <h2><%= t("helpers.links.sign_in") %></h2>
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.input :email, :autofocus => true %>
-  <%= f.input :password %>
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-signin' }) do |f| %>
+  <%= f.input :email, :autofocus => true, :class => "form-control" %>
+  <%= f.input :password, :class => "form-control" %>
   <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
   <%= f.button :submit, t("helpers.links.sign_in"), :class => 'btn btn-lg btn-primary btn-block bg-primary' %>
 <% end %>
