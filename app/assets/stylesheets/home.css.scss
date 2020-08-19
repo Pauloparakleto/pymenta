@@ -531,6 +531,7 @@ body {
     }
     .video{
         width: 100%;
+        max-width: 900px;
         text-align: center;
     }
 
@@ -545,8 +546,9 @@ body {
     }
 
 }
-@media(min-width: 421px) and (max-width: 700px){
+@media screen and (min-width: 1023px){
     .video{
-        width: 500px;
+        width: 100%;
+        max-width: 900px
     }
 }
