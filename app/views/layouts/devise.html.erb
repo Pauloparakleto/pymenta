@@ -54,11 +54,19 @@
 	 <!--! end of #wrap -->
 	   <footer class="footer bg-black small text-center text-white-50">
 		<div class="container wet-asphalt">
+			<div class="row mx-0">
+				<div class="col-md-4 col-lg-4">
 			<%= t('.copyright', :default => t("layouts.home.copyright")) %>
 			<a target="_blank" href="http://papayalabs.github.io" title="Lapapaya"><%= t('.companyname', :default => t("layouts.home.companyname")) %>
 			</a>. <%= t('.allrightreserved', :default => t("layouts.home.allrightreserved")) %>
-	<div><%= link_to t('.termsofservice', :default => t("helpers.home.termsofservice")), terms_path %></div>
-	<div><%= link_to t('.privacypolicy', :default => t("helpers.home.privacypolicy")), privacy_path  %></div>
+				</div>
+				<div class="col-md-4 col-lg-4">
+	<%= link_to t('.termsofservice', :default => t("helpers.home.termsofservice")), terms_path %>
+				</div>
+				<div class="col-md-4 col-lg-4">
+	<%= link_to t('.privacypolicy', :default => t("helpers.home.privacypolicy")), privacy_path  %>
+				</div>
+	</div>
 		</div>
 	</footer>
   </body>
