@@ -118,6 +118,11 @@ a:focus {
 }
 
 @media(min-width:767px) {
+    .navigation > li > a:hover,
+.navigation > li > a:focus {
+  text-decoration: none;
+  background-color: rgba(238, 238, 238, 0.274);
+    }
     #about{
         margin-bottom: 100px;
 
